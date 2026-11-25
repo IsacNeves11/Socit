@@ -2,14 +2,13 @@
 
 Protótipo acadêmico de triagem e priorização de alertas de cibersegurança. A aplicação organiza eventos, calcula um score explicável de risco (1–10), apresenta uma fila priorizada e recomenda playbooks para apoiar a decisão do analista.
 
-## Conteúdo deste repositório
+## Download do aplicativo
 
-- `README.md`: visão geral e instruções.
-- `AUDIT_REPORT_V2.7.3_VALIDATION.md`: revisão técnica e limitações conhecidas.
+**[Baixar SOCIT V2.7.3 revisado (ZIP)](./SOCIT-V2.7.3-REVISADO%20%281%29.zip)**
 
-**Atenção:** o código do aplicativo ainda não está anexado a este repositório. O pacote completo revisado está disponível nesta conversa como `SOCIT-V2.7.3-REVISADO.zip`. Para adicioná-lo, abra **Add file → Upload files**, selecione o ZIP e confirme em **Commit changes**. Depois disso, o ZIP aparecerá na lista de arquivos do repositório.
+O pacote completo está anexado ao repositório. Para executar, baixe o ZIP, extraia todos os arquivos e siga as instruções deste pacote no `README.md` interno. Não execute o sistema em redes ou ambientes reais sem autorização e validação técnica.
 
-## Principais módulos do pacote
+## Principais módulos
 
 - Dashboard web, fila e detalhes de incidentes.
 - API/backend com autenticação e controle por papéis.
