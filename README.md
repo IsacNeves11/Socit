@@ -7,7 +7,7 @@ Protótipo acadêmico de triagem e priorização de alertas de cibersegurança. 
 - `README.md`: visão geral e instruções.
 - `AUDIT_REPORT_V2.7.3_VALIDATION.md`: revisão técnica e limitações conhecidas.
 
-**Atenção:** o código do aplicativo ainda não está anexado a este repositório. O pacote completo revisado está disponível como arquivo ZIP nesta conversa. Para adicioná-lo, abra **Add file → Upload files**, selecione `SOCIT-V2.7.3-FULL.zip` e confirme em **Commit changes**. Depois disso, o ZIP aparecerá na lista de arquivos do repositório.
+**Atenção:** o código do aplicativo ainda não está anexado a este repositório. O pacote completo revisado está disponível nesta conversa como `SOCIT-V2.7.3-REVISADO.zip`. Para adicioná-lo, abra **Add file → Upload files**, selecione o ZIP e confirme em **Commit changes**. Depois disso, o ZIP aparecerá na lista de arquivos do repositório.
 
 ## Principais módulos do pacote
 
