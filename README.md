@@ -1,32 +1,41 @@
 # SOC Intelligent Triage — V2.7.3
 
-Protótipo acadêmico de triagem e priorização de alertas de cibersegurança. A aplicação organiza eventos, calcula um score explicável de risco (1–10), apresenta uma fila priorizada e recomenda playbooks para apoiar a decisão do analista.
+Protótipo acadêmico de triagem e priorização de alertas de cibersegurança. A aplicação organiza eventos, calcula e apresenta pontuações de risco, prioriza uma fila de incidentes e recomenda playbooks para apoiar a análise.
 
-## Download do aplicativo
+## Demonstração no GitHub Pages
 
-**[Baixar SOCIT V2.7.3 revisado (ZIP)](./SOCIT-V2.7.3-REVISADO%20%281%29.zip)**
+A versão estática de demonstração fica na pasta [docs](./docs/). Depois de ativar o GitHub Pages nas configurações do repositório, o endereço público será:
 
-O pacote completo está anexado ao repositório. Para executar, baixe o ZIP, extraia todos os arquivos e siga as instruções deste pacote no `README.md` interno. Não execute o sistema em redes ou ambientes reais sem autorização e validação técnica.
+**https://isacneves11.github.io/Socit/**
+
+Para habilitar: **Settings → Pages → Build and deployment → Deploy from a branch → Branch: main → Folder: /docs → Save**.
+
+> **Limites da demonstração:** o Pages executa apenas o frontend estático. Os alertas são dados sintéticos; simulações e alterações de status ficam no armazenamento local do navegador. Esta demonstração não se conecta ao backend Python, PostgreSQL ou Wazuh e não recebe eventos reais.
+
+## Aplicativo completo
+
+[Baixar o pacote SOCIT V2.7.3 revisado (ZIP)](./SOCIT-V2.7.3-REVISADO%20%281%29.zip)
+
+O pacote completo contém frontend, backend, testes, integração preparada para Wazuh e arquivos de implantação local/Docker. Para executar o sistema integrado, extraia o ZIP e siga o README interno.
 
 ## Principais módulos
 
-- Dashboard web, fila e detalhes de incidentes.
-- API/backend com autenticação e controle por papéis.
-- Motor de risco com pontuação de 1 a 10 e fatores explicáveis.
+- Dashboard e fila priorizada de incidentes.
+- Detalhes, evidências e playbooks orientativos.
+- Motor de risco e classificação por severidade.
+- Backend com autenticação e controle por papéis.
 - Persistência local SQLite e configuração para PostgreSQL.
 - Integração preparada para Wazuh via webhook autenticado.
-- Playbooks orientativos, atualização de status e exportação de relatórios.
 
 ## Revisão da V2.7.3
 
 - 16/16 testes automatizados executados passaram.
-- Verificação de sintaxe Python (`compileall`) passou.
-- Verificação de sintaxe JavaScript (`node --check`) passou.
-- Varredura do pacote não encontrou `.env` real, banco local, chave privada ou token de provedor conhecido.
-- README do pacote, dependências de teste e `.gitignore` foram ajustados.
+- Verificação de sintaxe Python (compileall) passou.
+- Verificação de sintaxe JavaScript (node --check) passou.
+- Varredura do pacote não encontrou .env real, banco local, chave privada ou token de provedor conhecido.
 
-Veja [`AUDIT_REPORT_V2.7.3_VALIDATION.md`](./AUDIT_REPORT_V2.7.3_VALIDATION.md) para a lista dos testes e limitações.
+Veja [AUDIT_REPORT_V2.7.3_VALIDATION.md](./AUDIT_REPORT_V2.7.3_VALIDATION.md) para a lista de testes e limitações.
 
 ## Limitações de validação
 
-Os testes foram executados localmente com Python 3.13.5 e SQLite. Ainda precisam de validação no ambiente de destino: Windows ponta a ponta, Docker/PostgreSQL, conexão com uma instalação real do Wazuh, TLS/proxy, backup/restore e controles operacionais. O protótipo não é uma plataforma homologada nem deve ser conectado a ambientes reais sem autorização.
+Os testes foram executados localmente com Python 3.13.5 e SQLite. Ainda precisam de validação no ambiente de destino: Docker/PostgreSQL, conexão com uma instalação real do Wazuh, TLS/proxy, backup/restore e controles operacionais. O protótipo não é uma plataforma homologada nem deve ser conectado a ambientes reais sem autorização.

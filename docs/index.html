@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="SOC Intelligent Triage — demonstração estática do painel de triagem de incidentes.">
+  <title>SOC Intelligent Triage — Demonstração</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .demo-banner{display:flex;align-items:center;gap:10px;padding:11px 14px;margin-bottom:18px;border:1px solid #795c28;background:#2a2112;color:#f6d58a;border-radius:10px;font-size:12px;line-height:1.5}
+    .demo-banner strong{color:#ffe6a9}.top-actions{flex-wrap:wrap}.user-chip{color:#b9d4e8}.section-note{font-size:11px;color:var(--muted)}
+    .status-pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 8px;font-size:10px;color:#c8d8e8}
+    .detail-actions{display:grid;gap:8px;margin-top:18px}.footer-note{margin-top:22px;color:var(--muted);font-size:11px;text-align:center}
+    .empty{border:1px dashed var(--line);border-radius:10px}.toolbar .input{flex:1}
+    @media(max-width:560px){.demo-banner{align-items:flex-start}.top-actions{justify-content:flex-start}.topbar h1{font-size:23px}}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">S</div><div><strong>SOC<span>IT</span></strong><small>INTELLIGENT TRIAGE</small></div></div>
+      <nav aria-label="Navegação principal">
+        <button class="nav-item active" data-view="dashboard">◈ <span>Dashboard</span></button>
+        <button class="nav-item" data-view="incidents">⚠ <span>Incidentes</span></button>
+        <button class="nav-item" data-view="playbooks">▣ <span>Playbooks</span></button>
+        <button class="nav-item" data-view="reports">▤ <span>Relatórios</span></button>
+      </nav>
+      <div class="sidebar-footer"><div class="status-dot"></div><div><strong>Modo demonstração</strong><small>Dados sintéticos locais</small></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">CENTRO DE OPERAÇÕES DE SEGURANÇA</div><h1 id="page-title">Visão operacional</h1></div>
+        <div class="top-actions">
+          <div class="user-chip">VISITANTE · DEMO</div><div class="live"><i></i> DEMO OFFLINE</div>
+          <button id="simulateBtn" class="btn btn-secondary">+ Simular alerta</button><button id="resetBtn" class="btn btn-secondary">Restaurar dados</button>
+        </div>
+      </header>
+      <div class="demo-banner"><span aria-hidden="true">ⓘ</span><div><strong>AMBIENTE DE DEMONSTRAÇÃO.</strong> Os incidentes são exemplos sintéticos. Alterações de status ficam somente neste navegador e não são enviadas a um backend, ao Wazuh ou a qualquer infraestrutura real.</div></div>
+      <section id="app-content"></section>
+      <div class="footer-note">SOC Intelligent Triage V2.7.3 · Demonstração estática hospedada no GitHub Pages</div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
